@@ -1,0 +1,45 @@
+{% extends "SmartGrowingApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+    <h3><strong>Nuestros Productos</strong><br></h3>
+    <div class="portafolio" id="soluciones">
+        <article class="card1" data-aos="zoom-out-down" data-aos-duration="2500">
+            <div class="book">
+                <img src="{% static 'SmartGrowingApp/img/invernadero.jpg' %}" alt="invernadero">
+            </div>
+            <figure class="description" data-aos="zoom-in">
+                <p>Invernaderos</p>
+            </figure>
+        </article>
+        <article class="card2" data-aos="zoom-out-down" data-aos-duration="2500">
+            <div class="book">
+                <img src="{% static 'SmartGrowingApp/img/indoor.jpg' %}" alt="indoor">
+            </div>
+            <figure class="description" data-aos="zoom-in">
+                <p>Indoor</p>
+            </figure>
+        </article>
+        <article class="card3" data-aos="zoom-out-down" data-aos-duration="2500">
+            <div class="book">
+                <img src="{% static 'SmartGrowingApp/img/domo.jpg' %}" alt="geodesico">
+            </div>
+            <figure class="description" data-aos="zoom-in">
+                <p>Geodésicos</p>
+            </figure>
+        </article>
+        <article class="card4" data-aos="zoom-out-down" data-aos-duration="2500">
+            <div class="book">
+                <img src="{% static 'SmartGrowingApp/img/paneles.jpg' %}" alt="solar">
+            </div>
+            <figure class="description" data-aos="zoom-in">
+                <p>Fotovoltaicos</p>
+            </figure>
+        </article>
+    </div>
+</main>
+
+{% endblock %}

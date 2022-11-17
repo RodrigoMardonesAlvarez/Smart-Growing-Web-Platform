@@ -1,0 +1,26 @@
+{% extends "SmartGrowingApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="autor">
+    <div class="contenido" data-aos="fade-right" data-aos-duration="9500">
+        <div class="static"><h1>Somos una plataforma de innovación</h1></div>
+        <div class="static"><h5>Investigamos y desarrollamos tecnologías para el cultivo hidropónico de hortalizas,
+            con uso responsable del agua y alimentación eléctrica basada en energías renovables
+        <br></h5></div>
+        <div class="change" id="rotate">
+            <h3>
+            </h3>
+        </div>
+        <br>
+        <!--div class="static"><h5>Colabora con nosotros!</h5></div-->
+        <div class="lowtext">
+            <a href="{% url 'Blog' %}"><button class="boton">Revisa nuestro blog</button></a>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

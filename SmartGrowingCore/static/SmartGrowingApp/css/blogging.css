@@ -1,0 +1,348 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+/* font-family: 'Rubik Glitch', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+/* Fin Google Fonts */
+
+
+/* Menu Grid */
+.navbar {
+    background-color: darkgreen;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+}
+.navbar .logo {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 180px;
+    width: 180px;
+    grid-column: 1/2;
+    opacity: 100%;
+}
+.navbar .menu {
+    margin-right: -10px;
+    grid-column: 3/7;
+    display: flex;
+}
+.navbar ul li {
+    padding: -5px;
+    margin-right: 3em;
+    list-style-type: none;
+}
+.navbar a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-top: -15px;
+    box-shadow: inset 0 0 0 0 yellow;
+    color: white;
+    padding: 15px;
+    transition: color .3s ease-in-out;
+    box-shadow: .3s ease-in-out;
+}
+.navbar a:hover {
+    box-shadow: inset 185px 0 0 0 yellow;
+    color: green;
+}
+.navbar .menu-bar {
+    display: none;
+}
+.navbar .icon {
+    grid-column: 8/9;
+    justify-content: flex-end;
+}
+.navbar .icon:hover {
+    color:yellow;
+}
+/* Fin Menu Grid */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: green;
+  background: linear-gradient(to right, darkgreen, green, darkgreen);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+background: linear-gradient(to right, darkgreen, green, darkgreen);
+
+}
+
+
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag + .tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+background: linear-gradient(to right, yellow, white);
+  color: darkgreen;
+  font-size: 1rem;
+}
+
+.tag-brown {
+  background: #D1913C;
+background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.6rem;
+  color: yellow;
+}
+
+.card__body h2 {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.card__body p {
+    font-size: 1rem;
+    color: white;
+    text-align: justify;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+.user__info > small, h5 {
+  color: yellowgreen;
+}
+
+
+/* Footer */
+.footer {
+    display: grid;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    background-color: green;
+    color: green;
+    grid-template-areas:
+    "podcast hablemos rss"
+}
+.footer .podcast {
+    grid-template-areas: podcast;
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    color: green;
+}
+.footer .podcast .fas {
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+.footer h2 {
+    grid-template-areas: hablemos;
+    color: white;
+    text-align: center;
+}
+.footer h2:hover {
+    color: yellow;
+}
+.footer .podcast .rss {
+    grid-template-areas: rss;
+}
+.footer .podcast .rss {
+    font-size: 1.6em;
+    color: white;
+    margin-right: 15px;
+    justify-content: flex-end;
+}
+.footer .rss .fab:hover {
+    color: yellow;
+}
+/* Fin Footer */
+
+/* Responsive */
+
+@media only screen and (max-width: 1200px)  {
+    
+    html, body {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+    .navbar {
+      background-color: green;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      align-items: center;
+    }
+    .navbar .logo {
+      margin-top: 5px;
+      height: 120px;
+      width: 120px;
+      grid-column: 2 / 3;
+    }
+    .navbar .menu {
+      grid-column: 4 / 7;
+      display: flex;
+    }
+    .navbar ul li {
+      margin-right: 3em;
+      list-style: none;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color:  white;
+      cursor: pointer;
+    }
+    .navbar ul li a:hover {
+      color: green;
+    }
+    .navbar .menu-bar {
+      display: none;
+    }
+    .navbar .icon {
+      grid-column: 8 / 9;
+      justify-content: flex-end;
+    }
+    .navbar {
+      position: relative;
+    }
+    .navbar .menu {
+      position: absolute;
+      width: 100%;
+      height: 70vh;
+      display: grid;
+      align-items: center;
+      background-color: green;
+      transform: translateX(170%);
+      transition: all 1s;
+      margin-top: 34em;
+      z-index: 1;
+    } 
+    .navbar .menu-toggle {
+      transform: translateX(70%);
+    }  
+    .navbar .icon {
+      display: none;
+    }
+    .navbar .menu-bar {
+      display: block;
+    }
+    .navbar .menu-bar .fas {
+      color: white;
+    }
+    .navbar .menu-bar .fas:hover {
+        color: yellow;
+    }
+    .navbar .menu li {
+      list-style: none;
+      margin: 0 auto;
+    }  
+    .navbar .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+    } 
+    .navbar .menu-bar {
+      grid-column: 8 / 10;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 1;
+    }  
+    .autor .contenido {
+      z-index: 0;
+      grid-column: 2 / 9;
+      grid-row: 2 / 7;
+    }
+    .autor .contenido h1 {
+      font-size: 3.5em;
+    }
+    .autor .contenido h3 {
+      font-size: 2.8em;
+      font-family: 'Rubik Glitch', cursive;
+    }
+    .footer {
+      grid-template-areas:
+      "listen-online social-network"
+    }
+    .footer h2 {
+      display: none;
+    }
+    .footer .rss {
+      margin: 0 auto;
+    }
+    .footer .rss .fab {
+      color: white;
+    }
+}
+    
