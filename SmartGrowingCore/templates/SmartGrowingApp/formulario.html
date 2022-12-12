@@ -14,16 +14,38 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
+    <!-- AUTENTICACION-->
+    <div style="background-color: yellow;">
+        <div style="position: fixed; top: 0%; right: 0%; margin-right: 5%; background-color: darkgreen">
+            {% if user.is_authenticated%}
+
+            Hola, {{user.username}}! &nbsp; &nbsp; <a style="color: yellow; font-size: 25px;" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+
+            {% else%}
+
+            <a style="color: yellow; font-size: 25px;" href="{% url 'logear' %}">Login</a> &nbsp; &nbsp; <a style="color: yellow; font-size: 25px;" href="{% url 'Autenticacion'%}">Registro</a>
+    
+            {% endif %}
+        </div>
+    </div>
+    <!-- FIN AUTENTICACION -->
     <header class="header">
         <nav class="navbar">
             <a href="{% url 'Home' %}"><img src="{% static 'SmartGrowingApp/img/logo.png' %}" class="logo" alt="Logotipo Organizacion"></a>
             <ul class="menu" id="menu">
-                <li><a href="{% url 'Home' %}">Inicio</a></li>
                 <li><a href="{% url 'Productos' %}">Productos</a></li>
                 <li><a href="{% url 'Servicios' %}">Servicios</a></li>
+                {% if not user.is_authenticated %}
                 <li><a href="{% url 'Desarrollo' %}">Desarrollo</a></li>
+                {% endif %}
+                {% if user.is_authenticated%}
+                <li><a href="#">Descargas</a></li>
+                {% endif %}
                 <li><a href="{% url 'Contacto' %}">Contacto</a></li>
                 <li><a href="{% url 'Blog' %}">Blog</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'Charts' %}">Reportes</a></li>
+                {% endif %}
             </ul>
             <div class="menu-bar">
                 <i class="fas fa-bars" id="menu-bar"></i>

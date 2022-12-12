@@ -1,0 +1,92 @@
+{% extends "SmartGrowingApp/analisis.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+<div class="showdata">
+    <h3 style="text-align: center; color: darkgreen !important;">Reporte Semestral</h3>
+    <canvas id="myChart" width="30" height="15"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [{
+              label: 'Temperatura Promedio',
+              data: [16, 20, 17, 22, 20, 24],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            },{
+              label: 'Nivel pH Promedio',
+              data: [5, 6.5, 4.6, 6, 8, 10],
+              backgroundColor: [
+                'rgba(83, 109, 249, 0.8)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(106, 241, 255, 0.8)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }],
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      </script>
+</div>
+
+
+<!--div class="showdata">
+    <h3 style="text-align: center;">Reportes</h3>
+        <canvas id="myChart" width="30" height="15"></canvas>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+        <script type="text/javascript">
+            $.get('{% url "line_chart_json" %}', function(data) {
+                var ctx = $("#myChart").get(0).getContext("2d");
+                new Chart(ctx, {
+                    type: 'line', data: data
+                });
+            });
+        </script>
+</div-->
+
+
+{% endblock %}

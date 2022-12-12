@@ -9,6 +9,7 @@ class Tag(models.Model):
     updated=models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        ordering = ['categoria']
         verbose_name='tag'
         verbose_name_plural='tags'
     
@@ -17,6 +18,7 @@ class Tag(models.Model):
 
 class Entrada(models.Model):
     titulo=models.CharField(max_length=100)
+    id = models.BigAutoField(primary_key=True)
     epigrafe=models.CharField(max_length=100, null=True, blank=True)
     contenido=models.CharField(max_length=800)
     imagen=models.ImageField(upload_to='Blog', null=True, blank=True)
@@ -27,9 +29,12 @@ class Entrada(models.Model):
     updated=models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        ordering = ['created']
         verbose_name='entrada'
         verbose_name_plural='entradas'
     
     def __str__(self):
         return self.titulo
 
+#Formulario
+#Paginacion

@@ -15,7 +15,3 @@ def productos(request):
 def desarrollo(request):
     
     return render(request, "SmartGrowingApp/desarrollo.html")
-
-def contacto(request):
-    
-    return render(request, "SmartGrowingApp/contacto.html")

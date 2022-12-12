@@ -1,0 +1,24 @@
+<div class="row mt-3 justify-content-center">
+    <nav>
+        <ul class="pagination">
+            {% if entradas.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">Primera</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ entradas.previous_page_number }}">&laquo;</a>
+                </li>
+            {% endif %}
+
+            {% if entradas.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ entradas.next_page_number }}">&raquo;</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ entradas.paginator.num_pages }}">Última</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</div>

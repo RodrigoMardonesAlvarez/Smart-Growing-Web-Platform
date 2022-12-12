@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+            
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4373088044.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/chart.min.js'%}"></script>
+    <link href="{% static 'SmartGrowingApp/css/boxes.css' %}" rel="stylesheet">
+    <link href="css/mediaQueries.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>django-chartjs line chart demo</title>
+</head>
+<body>
+    <!-- AUTENTICACION-->
+    <div style="background-color: yellow;">
+        <div style="position: fixed; top: 0%; right: 0%; margin-right: 5%; background-color: darkgreen">
+            {% if user.is_authenticated%}
+
+            <p style="color: yellow; font-size: 15px;"> Hola, {{user.username}}! </p>&nbsp; &nbsp; <a style="color: yellow; font-size: 15px;" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+
+            {% else%}
+
+            <a style="color: yellow; font-size: 25px;" href="{% url 'logear' %}">Login</a> &nbsp; &nbsp; <a style="color: yellow; font-size: 25px;" href="{% url 'Autenticacion'%}">Registro</a>
+    
+            {% endif %}
+        </div>
+    </div>
+    <!-- FIN AUTENTICACION -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="{% url 'Home' %}"><img src="{% static 'SmartGrowingApp/img/logo.png' %}" class="logo" alt="Logotipo Organizacion"></a>
+            <ul class="menu" id="menu">
+                <li><a href="{% url 'Productos' %}">Productos</a></li>
+                <li><a href="{% url 'Servicios' %}">Servicios</a></li>
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'Desarrollo' %}">Desarrollo</a></li>
+                {% endif %}
+                {% if user.is_authenticated%}
+                <li><a href="#">Descargas</a></li>
+                {% endif %}
+                <li><a href="{% url 'Contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'Blog' %}">Blog</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'Charts' %}">Reportes</a></li>
+                {% endif %}
+            </ul>
+            <div class="menu-bar">
+                <i class="fas fa-bars" id="menu-bar"></i>
+            </div>
+            <div class="icon">
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="footer">
+        <div class="podcast">
+            <h5>Cultivemos tus ideas</h5>
+            </div>
+            <h2></h2>
+            <div class="rss">
+                <i class="fa-brands fa-github"></i>        
+                <!--
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>-->
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{% static 'SmartGrowingApp/script/script.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>

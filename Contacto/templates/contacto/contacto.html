@@ -1,0 +1,50 @@
+{% extends "SmartGrowingApp/formulario.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!--div class="container">
+  <form id="contact" action="">
+    {{formularioCliente}}
+  </form>
+</div-->
+
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      {% csrf_token %}
+      <h2 style="text-align: center;">Agenda una reunión con nuestro equipo</h2>
+      <fieldset>
+        <p>Nombre y apellido</p>
+        {{formularioCliente.nombre}}
+      </fieldset>
+      <fieldset>
+        <p>Correo electrónico</p>
+        {{formularioCliente.email}}
+      </fieldset>
+      <fieldset>
+        <p>Teléfono de contacto</p>
+        {{formularioCliente.telefono}}
+      </fieldset>
+      <fieldset>
+        <p>Fecha de reunión</p>
+        {{formularioCliente.reunion}}
+      </fieldset>
+      <fieldset>
+        <p>Descripción de su proyecto</p>
+        {{formularioCliente.proyecto}}
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
+      </fieldset>
+      <fieldset>
+        {% if "validacion" in request.GET %}
+        <h2 style="text-align: center;"> Información enviada correctamente</h2>
+        {% endif %}
+      </fieldset>
+    </form>
+  </div>
+
+{{request.POST}}
+{% endblock %}

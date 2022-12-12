@@ -1,0 +1,23 @@
+{% extends "SmartGrowingApp/formulario.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+        <h2 style="text-align: center;">Reportes</h2>
+        <ul>
+            {% for key, value in reportes.items%}
+            <li>{{key}} - {{value}}</li>
+            {% endfor %}
+        </ul>
+    <fieldset>
+      </fieldset>
+
+    </form>
+  </div>
+
+
+{% endblock %}

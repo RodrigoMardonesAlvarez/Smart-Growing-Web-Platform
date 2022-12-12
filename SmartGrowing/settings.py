@@ -37,9 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chartjs',
+    'firebase_admin',
+    'crispy_forms',
     'SmartGrowingCore',
     'Servicios',
     'Blog',
+    'Contacto',
+    'Charts',
+    'Autenticacion',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -128,3 +134,16 @@ MEDIA_ROOT= BASE_DIR / 'Media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CONFIGURACION EMAIL
+
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER="rodrigomardones@smartgrowing.org"
+EMAIL_HOST_PASSWORD="?TheGloryOfSinGularity2035!"
+
+# CRISPY
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
