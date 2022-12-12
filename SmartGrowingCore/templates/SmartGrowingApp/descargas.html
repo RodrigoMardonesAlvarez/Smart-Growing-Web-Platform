@@ -1,0 +1,33 @@
+{% extends "SmartGrowingApp/cards.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<body>
+    <div class = container>
+        <h3><strong>Instala nuestro software</strong><br></h3>
+        <div class="portafolio" id="soluciones">
+            <div class = card>
+                <div class = image>
+                    <img href = "#" src="{% static 'SmartGrowingApp/img/android.png' %}">
+                </div>
+                <div class = content>
+                    <h1>Dispositivos Android</h1>
+                    <p> <a href="https://drive.google.com/file/d/17RUWAyBNe1BCxcZDsHHhMR-qwzvCeiCc/view?usp=sharing" target="_blank">Descarga nuestra APK</a> </p>
+                </div>
+            </div>
+            <div class = card>
+                <div class = image>
+                    <img href = "#" src="{% static 'SmartGrowingApp/img/desktop.png' %}">
+                </div>
+                <div class = content>
+                    <h1>Windows & GNU/Linux </h1>
+                    <p> <a href="#" target="_blank">Descarga nuestro archivo ejecutable</a> </p>
+                </div>
+            </div>        
+    </div>
+</body>
+
+
+{% endblock %}

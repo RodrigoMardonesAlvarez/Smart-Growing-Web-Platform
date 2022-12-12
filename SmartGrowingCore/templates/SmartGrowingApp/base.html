@@ -41,7 +41,7 @@
                 <li><a href="{% url 'Desarrollo' %}">Desarrollo</a></li>
                 {% endif %}
                 {% if user.is_authenticated%}
-                <li><a href="#">Descargas</a></li>
+                <li><a href="{% url 'Descargas' %}">Descargas</a></li>
                 {% endif %}
                 <li><a href="{% url 'Contacto' %}">Contacto</a></li>
                 <li><a href="{% url 'Blog' %}">Blog</a></li>

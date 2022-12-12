@@ -15,3 +15,7 @@ def productos(request):
 def desarrollo(request):
     
     return render(request, "SmartGrowingApp/desarrollo.html")
+
+def descargas(request):
+
+    return render(request, "SmartGrowingApp/descargas.html")
